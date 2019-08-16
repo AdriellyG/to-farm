@@ -1,0 +1,2 @@
+class TipoCultivo < ApplicationRecord
+end
