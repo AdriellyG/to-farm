@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :cargos
   resources :local_fisicos
   resources :acesso_usuario_fazendas
   resources :cultivos
