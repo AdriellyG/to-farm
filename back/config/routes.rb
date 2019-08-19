@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :acesso_usuario_fazendas
   resources :cultivos
   resources :usuarios
   resources :fazenda_has_planos
