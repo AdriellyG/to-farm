@@ -1,0 +1,2 @@
+class TipoSolo < ApplicationRecord
+end
