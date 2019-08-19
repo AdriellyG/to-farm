@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dt_inicio: 2019-08-19
+  fazenda: one
+  ativo: false
+
+two:
+  dt_inicio: 2019-08-19
+  fazenda: two
+  ativo: false

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nome: MyString
+  tipo_cultivos: one
+  fazendas: one
+
+two:
+  nome: MyString
+  tipo_cultivos: two
+  fazendas: two
