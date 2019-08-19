@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_19_183050) do
+ActiveRecord::Schema.define(version: 2019_08_19_183140) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,6 +61,15 @@ ActiveRecord::Schema.define(version: 2019_08_19_183050) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["pessoas_id"], name: "index_fazendas_on_pessoas_id"
+  end
+
+  create_table "funcionarios", force: :cascade do |t|
+    t.bigint "cargos_id"
+    t.bigint "usuarios_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cargos_id"], name: "index_funcionarios_on_cargos_id"
+    t.index ["usuarios_id"], name: "index_funcionarios_on_usuarios_id"
   end
 
   create_table "local_fisicos", force: :cascade do |t|
@@ -128,6 +137,8 @@ ActiveRecord::Schema.define(version: 2019_08_19_183050) do
   add_foreign_key "cultivos", "tipo_cultivos", column: "tipo_cultivos_id"
   add_foreign_key "fazenda_has_planos", "fazendas", column: "fazendas_id"
   add_foreign_key "fazendas", "pessoas", column: "pessoas_id"
+  add_foreign_key "funcionarios", "cargos", column: "cargos_id"
+  add_foreign_key "funcionarios", "usuarios", column: "usuarios_id"
   add_foreign_key "local_fisicos", "fazendas", column: "fazendas_id"
   add_foreign_key "pessoa_fisicas", "pessoas"
   add_foreign_key "pessoa_juridicas", "pessoas"
