@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :tipo_movimentacaos
   resources :status_plantios
   resources :areas
   resources :tipo_solos
