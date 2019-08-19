@@ -1,0 +1,2 @@
+class StatusPlantio < ApplicationRecord
+end
