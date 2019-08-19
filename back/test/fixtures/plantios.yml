@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dt_inicial: 2019-08-19
+  dt_final: 2019-08-19
+  areas: one
+  fazendas: one
+  cultivos: one
+  status_plantios: one
+
+two:
+  dt_inicial: 2019-08-19
+  dt_final: 2019-08-19
+  areas: two
+  fazendas: two
+  cultivos: two
+  status_plantios: two

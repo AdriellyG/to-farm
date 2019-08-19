@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_19_184209) do
+ActiveRecord::Schema.define(version: 2019_08_19_184652) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -128,6 +128,21 @@ ActiveRecord::Schema.define(version: 2019_08_19_184209) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "plantios", force: :cascade do |t|
+    t.date "dt_inicial"
+    t.date "dt_final"
+    t.bigint "areas_id"
+    t.bigint "fazendas_id"
+    t.bigint "cultivos_id"
+    t.bigint "status_plantios_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["areas_id"], name: "index_plantios_on_areas_id"
+    t.index ["cultivos_id"], name: "index_plantios_on_cultivos_id"
+    t.index ["fazendas_id"], name: "index_plantios_on_fazendas_id"
+    t.index ["status_plantios_id"], name: "index_plantios_on_status_plantios_id"
+  end
+
   create_table "status_plantios", force: :cascade do |t|
     t.string "descricao"
     t.datetime "created_at", null: false
@@ -177,5 +192,9 @@ ActiveRecord::Schema.define(version: 2019_08_19_184209) do
   add_foreign_key "local_fisicos", "fazendas", column: "fazendas_id"
   add_foreign_key "pessoa_fisicas", "pessoas"
   add_foreign_key "pessoa_juridicas", "pessoas"
+  add_foreign_key "plantios", "areas", column: "areas_id"
+  add_foreign_key "plantios", "cultivos", column: "cultivos_id"
+  add_foreign_key "plantios", "fazendas", column: "fazendas_id"
+  add_foreign_key "plantios", "status_plantios", column: "status_plantios_id"
   add_foreign_key "usuarios", "pessoa_fisicas", column: "pessoa_fisicas_id"
 end
