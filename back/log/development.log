@@ -860,3 +860,41 @@ Migrating to CreateTipoSolos (20190819183452)
   ↳ bin/rails:4
   [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2950963735451797590)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to CreateAreas (20190819183742)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (18.5ms)[0m  [1m[35mCREATE TABLE "areas" ("id" bigserial primary key, "nome" character varying, "fazendas_id" bigint, "tipo_solos_id" bigint, "local_fisicos_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_974c09cbbf"
+FOREIGN KEY ("fazendas_id")
+  REFERENCES "fazendas" ("id")
+, CONSTRAINT "fk_rails_7722bde29c"
+FOREIGN KEY ("tipo_solos_id")
+  REFERENCES "tipo_solos" ("id")
+, CONSTRAINT "fk_rails_09caed73c5"
+FOREIGN KEY ("local_fisicos_id")
+  REFERENCES "local_fisicos" ("id")
+)[0m
+  ↳ db/migrate/20190819183742_create_areas.rb:3
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE  INDEX  "index_areas_on_fazendas_id" ON "areas"  ("fazendas_id")[0m
+  ↳ db/migrate/20190819183742_create_areas.rb:3
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE  INDEX  "index_areas_on_tipo_solos_id" ON "areas"  ("tipo_solos_id")[0m
+  ↳ db/migrate/20190819183742_create_areas.rb:3
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE  INDEX  "index_areas_on_local_fisicos_id" ON "areas"  ("local_fisicos_id")[0m
+  ↳ db/migrate/20190819183742_create_areas.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190819183742"]]
+  ↳ bin/rails:4
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2950963735451797590)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4

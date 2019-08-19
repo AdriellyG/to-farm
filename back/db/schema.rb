@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_19_183452) do
+ActiveRecord::Schema.define(version: 2019_08_19_183742) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,18 @@ ActiveRecord::Schema.define(version: 2019_08_19_183452) do
     t.datetime "updated_at", null: false
     t.index ["fazendas_id"], name: "index_acesso_usuario_fazendas_on_fazendas_id"
     t.index ["usuarios_id"], name: "index_acesso_usuario_fazendas_on_usuarios_id"
+  end
+
+  create_table "areas", force: :cascade do |t|
+    t.string "nome"
+    t.bigint "fazendas_id"
+    t.bigint "tipo_solos_id"
+    t.bigint "local_fisicos_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["fazendas_id"], name: "index_areas_on_fazendas_id"
+    t.index ["local_fisicos_id"], name: "index_areas_on_local_fisicos_id"
+    t.index ["tipo_solos_id"], name: "index_areas_on_tipo_solos_id"
   end
 
   create_table "cargos", force: :cascade do |t|
@@ -140,6 +152,9 @@ ActiveRecord::Schema.define(version: 2019_08_19_183452) do
 
   add_foreign_key "acesso_usuario_fazendas", "fazendas", column: "fazendas_id"
   add_foreign_key "acesso_usuario_fazendas", "usuarios", column: "usuarios_id"
+  add_foreign_key "areas", "fazendas", column: "fazendas_id"
+  add_foreign_key "areas", "local_fisicos", column: "local_fisicos_id"
+  add_foreign_key "areas", "tipo_solos", column: "tipo_solos_id"
   add_foreign_key "cultivos", "fazendas", column: "fazendas_id"
   add_foreign_key "cultivos", "tipo_cultivos", column: "tipo_cultivos_id"
   add_foreign_key "fazenda_has_planos", "fazendas", column: "fazendas_id"

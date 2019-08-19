@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :areas
   resources :tipo_solos
   resources :funcionarios
   resources :cargos

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nome: MyString
+  fazendas: one
+  tipo_solos: one
+  local_fisicos: one
+
+two:
+  nome: MyString
+  fazendas: two
+  tipo_solos: two
+  local_fisicos: two
