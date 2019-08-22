@@ -101,18 +101,18 @@ ActiveRecord::Schema.define(version: 2019_08_19_184652) do
 
   create_table "pessoa_fisicas", force: :cascade do |t|
     t.string "cpf"
-    t.bigint "pessoa_id"
+    t.bigint "pessoas_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["pessoa_id"], name: "index_pessoa_fisicas_on_pessoa_id"
+    t.index ["pessoas_id"], name: "index_pessoa_fisicas_on_pessoas_id"
   end
 
   create_table "pessoa_juridicas", force: :cascade do |t|
     t.string "cnpj"
-    t.bigint "pessoa_id"
+    t.bigint "pessoas_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["pessoa_id"], name: "index_pessoa_juridicas_on_pessoa_id"
+    t.index ["pessoas_id"], name: "index_pessoa_juridicas_on_pessoas_id"
   end
 
   create_table "pessoas", force: :cascade do |t|
@@ -190,8 +190,8 @@ ActiveRecord::Schema.define(version: 2019_08_19_184652) do
   add_foreign_key "funcionarios", "cargos", column: "cargos_id"
   add_foreign_key "funcionarios", "usuarios", column: "usuarios_id"
   add_foreign_key "local_fisicos", "fazendas", column: "fazendas_id"
-  add_foreign_key "pessoa_fisicas", "pessoas"
-  add_foreign_key "pessoa_juridicas", "pessoas"
+  add_foreign_key "pessoa_fisicas", "pessoas", column: "pessoas_id"
+  add_foreign_key "pessoa_juridicas", "pessoas", column: "pessoas_id"
   add_foreign_key "plantios", "areas", column: "areas_id"
   add_foreign_key "plantios", "cultivos", column: "cultivos_id"
   add_foreign_key "plantios", "fazendas", column: "fazendas_id"
