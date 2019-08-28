@@ -7,6 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 puts 'Starting seeds...'
 
+load File.join(Rails.root, 'db', 'seeds', 'pessoa.rb')
+load File.join(Rails.root, 'db', 'seeds', 'pessoa_fisica.rb')
+load File.join(Rails.root, 'db', 'seeds', 'fazenda.rb')
 load File.join(Rails.root, 'db', 'seeds', 'tipo_cultivo.rb')
+load File.join(Rails.root, 'db', 'seeds', 'cultivo.rb')
 
 puts 'Finished!'
