@@ -7,7 +7,7 @@ class CreateFazendas < ActiveRecord::Migration[5.2]
       t.integer :cep
       t.string :estado
       t.string :cidade
-      t.references :pessoas, foreign_key: true
+      t.references :pessoa, foreign_key: true
 
       t.timestamps
     end

@@ -6,7 +6,7 @@ class CreatePlantios < ActiveRecord::Migration[5.2]
       t.references :areas, foreign_key: true
       t.references :fazendas, foreign_key: true
       t.references :cultivos, foreign_key: true
-      t.references :status_plantios, foreign_key: true
+      t.references :status_plantio, foreign_key: true
 
       t.timestamps
     end
