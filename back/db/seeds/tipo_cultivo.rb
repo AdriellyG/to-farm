@@ -12,4 +12,4 @@ TipoCultivo.create!({
     nome: 'Legume'
 })
 
-puts "Created!"
+puts "-> Created!"
