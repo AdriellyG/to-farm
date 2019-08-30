@@ -13,3 +13,4 @@ TipoCultivo.create!({
 })
 
 puts "-> Created!"
+puts "========================================"

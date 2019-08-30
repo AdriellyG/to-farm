@@ -6,3 +6,4 @@ PessoaFisica.create!({
 })
 
 puts "-> Created!"
+puts "========================================"

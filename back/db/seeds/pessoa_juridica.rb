@@ -6,3 +6,4 @@ PessoaJuridica.create!({
 })
 
 puts "-> Created!"
+puts "========================================"
