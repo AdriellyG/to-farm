@@ -6,73 +6,12 @@
 	},
 	"item": [
 		{
-			"name": "tipo_cultivo",
+			"name": "pessoa",
 			"item": [
 				{
-					"name": "tipo_cultivos",
+					"name": "pessoas",
 					"request": {
 						"method": "GET",
-						"header": [
-							{
-								"key": "Content-Type",
-								"type": "text",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "http://localhost:3000/api/tipo_cultivos",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"tipo_cultivos"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "tipo_cultivos by id",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Content-Type",
-								"type": "text",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "http://localhost:3000/api/tipo_cultivos/1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"tipo_cultivos",
-								"1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "tipo_cultivos",
-					"request": {
-						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
@@ -80,97 +19,6 @@
 								"type": "text"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"nome\": \"Hortaliça\"\n}"
-						},
-						"url": {
-							"raw": "http://localhost:3000/api/tipo_cultivos",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"tipo_cultivos"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "tipo_cultivos",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Content-Type",
-								"type": "text",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"nome\": \"Legume\"\n}"
-						},
-						"url": {
-							"raw": "http://localhost:3000/api/tipo_cultivos/1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"tipo_cultivos",
-								"1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "tipo_cultivos",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Content-Type",
-								"type": "text",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "http://localhost:3000/api/tipo_cultivos/2",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"tipo_cultivos",
-								"2"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "pessoa",
-			"item": [
-				{
-					"name": "pessoas",
-					"request": {
-						"method": "GET",
-						"header": [],
 						"body": {
 							"mode": "raw",
 							"raw": ""
@@ -624,6 +472,989 @@
 								"api",
 								"pessoa_juridicas",
 								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "fazenda",
+			"item": [
+				{
+					"name": "fazenda",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"Fazenda 1\",\n    \"rua\": \"Rua 1\",\n    \"numero\": \"1\",\n    \"cep\": 12570000,\n    \"estado\": \"ES\",\n    \"cidade\": \"Cidade 1\",\n    \"pessoa_id\": 1\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/fazendas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"fazendas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fazenda",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/fazendas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"fazendas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fazenda by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/fazendas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"fazendas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fazenda",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"Fazenda 1.1\",\n    \"rua\": \"Rua 1.1\",\n    \"numero\": \"11\",\n    \"cep\": 12570001,\n    \"estado\": \"SP\",\n    \"cidade\": \"Cidade 1.1\",\n    \"pessoa_id\": 1\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/fazendas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"fazendas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fazenda",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/fazendas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"fazendas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "plano",
+			"item": [
+				{
+					"name": "plano",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"Plano teste post\",\n    \"valor\": 100\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/planos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"planos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "plano",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/planos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"planos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "plano by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/planos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"planos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "plano",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"Teste request put\",\n    \"valor\": \"100\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/planos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"planos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "plano",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/planos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"planos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "fazenda_has_plano",
+			"item": [
+				{
+					"name": "fazenda_has_plano",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"dt_inicio\": \"2019-09-04\",\n    \"fazenda_id\": 1,\n    \"plano_id\": 1,\n    \"ativo\": true\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/fazenda_has_planos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"fazenda_has_planos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fazenda_has_plano",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/fazenda_has_planos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"fazenda_has_planos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fazenda_has_plano by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/fazenda_has_planos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"fazenda_has_planos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fazenda_has_plano",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"dt_inicio\": \"2019-09-05\",\n    \"fazenda_id\": 1,\n    \"plano_id\": 1,\n    \"ativo\": true\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/fazenda_has_planos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"fazenda_has_planos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fazenda_has_plano",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/fazenda_has_planos/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"fazenda_has_planos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tipo_cultivo",
+			"item": [
+				{
+					"name": "tipo_cultivos",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/tipo_cultivos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"tipo_cultivos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tipo_cultivos by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/tipo_cultivos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"tipo_cultivos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tipo_cultivos",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"Hortaliça\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/tipo_cultivos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"tipo_cultivos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tipo_cultivos",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"Legume\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/tipo_cultivos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"tipo_cultivos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tipo_cultivos",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/tipo_cultivos/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"tipo_cultivos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cultivo",
+			"item": [
+				{
+					"name": "cultivos",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/cultivos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cultivos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cultivos by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/cultivos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cultivos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cultivos",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"Hortaliça\",\n\t\"tipo_cultivo_id\": 2,\n    \"fazenda_id\": 1\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/cultivos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cultivos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tipo_cultivos",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"Legume\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/tipo_cultivos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"tipo_cultivos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tipo_cultivos",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/tipo_cultivos/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"tipo_cultivos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "local_fisico",
+			"item": [
+				{
+					"name": "local_fisico",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"Local 1\",\n\t\"descricao\": \"Assunto 1\",\n\t\"fazendas_id\": 1\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/local_fisicos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"local_fisicos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "local_fisico",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/local_fisicos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"local_fisicos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "local_fisico by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/local_fisicos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"local_fisicos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "local_fisico",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"Local 1.1\",\n\t\"descricao\": \"Assunto 1.1\",\n\t\"fazendas_id\": 2\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/local_fisicos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"local_fisicos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "local_fisico",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/local_fisicos/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"local_fisicos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "usuario",
+			"item": [
+				{
+					"name": "usuario",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"usuarios"
 							]
 						}
 					},
