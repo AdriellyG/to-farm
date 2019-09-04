@@ -5,3 +5,4 @@ LocalFisico.create!(nome: "Local 2", descricao: "Assunto 2", fazenda_id: 2)
 LocalFisico.create!(nome: "Local 3", descricao: "Assunto 3", fazenda_id: 3)
 
 puts "-> Created!"
+puts "========================================"
