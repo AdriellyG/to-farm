@@ -19,6 +19,7 @@ load File.join(Rails.root, 'db', 'seeds', 'usuario.rb')
 load File.join(Rails.root, 'db', 'seeds', 'tipo_cultivo.rb')
 load File.join(Rails.root, 'db', 'seeds', 'cultivo.rb')
 load File.join(Rails.root, 'db', 'seeds', 'local_fisico.rb')
+load File.join(Rails.root, 'db', 'seeds', 'cargo.rb')
 
 puts 'Finished!'
 puts "****************************************"
