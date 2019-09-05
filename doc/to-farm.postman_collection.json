@@ -1270,6 +1270,164 @@
 			]
 		},
 		{
+			"name": "usuario",
+			"item": [
+				{
+					"name": "usuario",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "usuario by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/usuarios/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"usuarios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "usuario",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"teste@teste.com\",\n\t\"senha\": \"teste\",\n\t\"pessoa_fisica_id\": 1\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "usuario",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"teste1@teste.com\",\n\t\"senha\": \"teste1\",\n\t\"pessoa_fisica_id\": 2\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/usuarios/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"usuarios",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "usuario",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/usuarios/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"usuarios",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "local_fisico",
 			"item": [
 				{
@@ -1428,10 +1586,305 @@
 			]
 		},
 		{
-			"name": "usuario",
+			"name": "tipo_solo",
 			"item": [
 				{
-					"name": "usuario",
+					"name": "tipo_solo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/tipo_solos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"tipo_solos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tipo_solo by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/tipo_solos/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"tipo_solos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tipo_solo",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"Teste\",\n\t\"acidez\": 0.23\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/tipo_solos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"tipo_solos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tipo_solo",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"Teste2\",\n\t\"acidez\": 0.39\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/tipo_solos/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"tipo_solos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tipo_solo",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/tipo_solos/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"tipo_solos",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "area",
+			"item": [
+				{
+					"name": "area",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/areas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"areas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "area by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/areas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"areas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "area",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"Area 3\",\n\t\"fazenda_id\": 3,\n\t\"tipo_solo_id\": 3,\n\t\"local_fisico_id\": 3\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/areas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"areas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "area",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"Area 4\",\n\t\"fazenda_id\": 3,\n\t\"tipo_solo_id\": 3,\n\t\"local_fisico_id\": 3\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/areas/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"areas",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "area",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/areas/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"areas",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cargo",
+			"item": [
+				{
+					"name": "cargo",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -1446,7 +1899,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/usuarios",
+							"raw": "http://localhost:3000/api/cargos",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1454,7 +1907,288 @@
 							"port": "3000",
 							"path": [
 								"api",
-								"usuarios"
+								"cargos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cargo by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/cargos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cargos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cargo",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"teste\",\n\t\"descricao\": \"teste\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/cargos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cargos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cargo",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"teste1\",\n\t\"descricao\": \"teste1\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/cargos/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cargos",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cargo",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/cargos/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cargos",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "funcionario",
+			"item": [
+				{
+					"name": "funcionario",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/funcionarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"funcionarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "funcionario by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/funcionarios/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"funcionarios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "funcionario",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"cargo_id\": 1,\n\t\"usuario_id\": 1\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/funcionarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"funcionarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "funcionario",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"cargo_id\": 2,\n\t\"usuario_id\": 2\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/funcionarios/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"funcionarios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "funcionario",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/funcionarios/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"funcionarios",
+								"4"
 							]
 						}
 					},
