@@ -1,0 +1,1 @@
+select pessoa_is_fisica_or_juridica(4);
