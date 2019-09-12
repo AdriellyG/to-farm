@@ -21,6 +21,8 @@ load File.join(Rails.root, 'db', 'seeds', 'cultivo.rb')
 load File.join(Rails.root, 'db', 'seeds', 'tipo_solo.rb')
 load File.join(Rails.root, 'db', 'seeds', 'local_fisico.rb')
 load File.join(Rails.root, 'db', 'seeds', 'area.rb')
+load File.join(Rails.root, 'db', 'seeds', 'status_plantio.rb')
+load File.join(Rails.root, 'db', 'seeds', 'plantio.rb')
 load File.join(Rails.root, 'db', 'seeds', 'cargo.rb')
 load File.join(Rails.root, 'db', 'seeds', 'funcionario.rb')
 
