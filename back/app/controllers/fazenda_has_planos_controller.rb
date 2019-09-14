@@ -46,6 +46,6 @@ class FazendaHasPlanosController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def fazenda_has_plano_params
-      params.require(:fazenda_has_plano).permit(:dt_inicio, :fazenda_id, :ativo)
+      params.require(:fazenda_has_plano).permit(:dt_inicio, :fazenda_id, :plano_id, :ativo)
     end
 end

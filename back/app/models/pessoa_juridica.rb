@@ -1,3 +1,3 @@
 class PessoaJuridica < ApplicationRecord
-  belongs_to :pessoa
+  belongs_to :pessoa, class_name: "Pessoa", optional: true
 end

@@ -3,7 +3,7 @@ class CreateUsuarios < ActiveRecord::Migration[5.2]
     create_table :usuarios do |t|
       t.string :email
       t.string :senha
-      t.references :pessoa_fisica, foreign_key: true
+      t.references :pessoa_fisicas, foreign_key: true
 
       t.timestamps
     end
