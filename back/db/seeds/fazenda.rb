@@ -8,7 +8,7 @@ fazenda = [
         cep: 12570000,
         estado: "ES",
         cidade: "Cidade 1",
-        pessoa_id: 1
+        pessoas_id: 1
     },
     {
         nome: "Fazenda 2",
@@ -17,7 +17,7 @@ fazenda = [
         cep: 12570001,
         estado: "RJ",
         cidade: "Cidade 2",
-        pessoa_id: 2
+        pessoas_id: 2
     },
     {
         nome: "Fazenda 3",
@@ -26,7 +26,7 @@ fazenda = [
         cep: 12570003,
         estado: "SP",
         cidade: "Cidade 3",
-        pessoa_id: 3
+        pessoas_id: 3
     },
     {
         nome: "Fazenda 4",
@@ -35,14 +35,14 @@ fazenda = [
         cep: 12570004,
         estado: "SP",
         cidade: "Cidade 4",
-        pessoa_id: 4
+        pessoas_id: 4
     }
 ]
 
 faz_count = 0
 
 fazenda.each do |item|
-    fazenda_item = Fazenda.find_by(nome: item[:nome], pessoa_id: item[:pessoa_id])
+    fazenda_item = Fazenda.find_by(nome: item[:nome], pessoas_id: item[:pessoas_id])
 
     if !fazenda_item then
         faz_count = faz_count + 1
@@ -56,7 +56,7 @@ fazenda.each do |item|
             cep:       item[:cep],
             estado:    item[:estado],
             cidade:    item[:cidade],
-            pessoa_id: item[:pessoa_id]
+            pessoas_id: item[:pessoas_id]
         )
     end
 end

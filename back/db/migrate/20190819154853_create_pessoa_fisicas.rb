@@ -2,7 +2,7 @@ class CreatePessoaFisicas < ActiveRecord::Migration[5.2]
   def change
     create_table :pessoa_fisicas do |t|
       t.string :cpf
-      t.references :pessoa, foreign_key: true
+      t.references :pessoas, foreign_key: true
 
       t.timestamps
     end
