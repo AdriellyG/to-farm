@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  apipie
   scope :api, defaults: {format: :json} do
     resources :cultivos
     resources :usuarios
