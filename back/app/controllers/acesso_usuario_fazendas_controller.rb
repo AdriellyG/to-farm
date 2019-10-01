@@ -1,6 +1,7 @@
 class AcessoUsuarioFazendasController < ApplicationController
   before_action :set_acesso_usuario_fazenda, only: [:show, :update, :destroy]
 
+  api :GET, 'Listagem dos acessos_usuarios_fazendas', 'Acessos que o usuário possui em determinada fazenda'
   # GET /acesso_usuario_fazendas
   def index
     @acesso_usuario_fazendas = AcessoUsuarioFazenda.all
