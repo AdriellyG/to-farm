@@ -25,6 +25,7 @@ load File.join(Rails.root, 'db', 'seeds', 'status_plantio.rb')
 load File.join(Rails.root, 'db', 'seeds', 'plantio.rb')
 load File.join(Rails.root, 'db', 'seeds', 'cargo.rb')
 load File.join(Rails.root, 'db', 'seeds', 'funcionario.rb')
+load File.join(Rails.root, 'db', 'seeds', 'acesso_usuario_fazenda.rb')
 
 puts 'Finished!'
 puts "****************************************"
