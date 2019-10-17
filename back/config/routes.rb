@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   apipie
   scope :api, defaults: {format: :json} do
+
+    post 'auth/login', to: 'authentication#authenticate'
+
+    # Usuario
+    post 'signup',     to: 'usuarios#create'
+    
     resources :cultivos
     resources :usuarios
     resources :fazenda_has_planos
