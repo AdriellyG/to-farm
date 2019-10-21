@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::API
     include Response
-    #include ExceptionHandler
+    include ExceptionHandler
 
     # Chamado depois de cada ação do controller
     before_action :authorize_request

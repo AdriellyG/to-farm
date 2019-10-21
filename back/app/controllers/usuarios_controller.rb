@@ -22,7 +22,6 @@ class UsuariosController < ApplicationController
     auth_token = AuthenticateUsuario.new(@usuario.email, @usuario.password).call
     response = { message: Message.account_created, auth_token: auth_token }
     json_response(response, :created)
-    #render json: response, status: :created
   end
 
 
