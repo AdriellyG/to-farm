@@ -1,4 +1,5 @@
 class UsuariosController < ApplicationController
+  skip_before_action :authorize_request, only: :create
   before_action :set_usuario, only: [:show, :update, :destroy]
 
   # GET /usuarios
@@ -13,16 +14,28 @@ class UsuariosController < ApplicationController
     render json: @usuario
   end
 
-  # POST /usuarios
-  def create
-    @usuario = Usuario.new(usuario_params)
 
-    if @usuario.save
-      render json: @usuario, status: :created, location: @usuario
-    else
-      render json: @usuario.errors, status: :unprocessable_entity
-    end
+
+  # Retorna autenticado quando está logado
+  def create
+    @usuario = Usuario.create!(usuario_params)
+    auth_token = AuthenticateUsuario.new(@usuario.email, @usuario.password).call
+    response = { message: Message.account_created, auth_token: auth_token }
+    json_response(response, :created)
   end
+
+
+
+  # POST /usuarios
+  # def create
+  #   @usuario = Usuario.new(usuario_params)
+
+  #   if @usuario.save
+  #     render json: @usuario, status: :created, location: @usuario
+  #   else
+  #     render json: @usuario.errors, status: :unprocessable_entity
+  #   end
+  # end
 
   # PATCH/PUT /usuarios/1
   def update
@@ -46,6 +59,6 @@ class UsuariosController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def usuario_params
-      params.require(:usuario).permit(:email, :senha, :pessoa_fisica_id)
+      params.require(:usuario).permit(:email, :password, :password_confirmation, :pessoa_fisica_id)
     end
 end

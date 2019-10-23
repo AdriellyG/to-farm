@@ -15,7 +15,7 @@ load File.join(Rails.root, 'db', 'seeds', 'pessoa_juridica.rb')
 load File.join(Rails.root, 'db', 'seeds', 'fazenda.rb')
 load File.join(Rails.root, 'db', 'seeds', 'plano.rb')
 load File.join(Rails.root, 'db', 'seeds', 'fazenda_has_plano.rb')
-load File.join(Rails.root, 'db', 'seeds', 'usuario.rb')
+# load File.join(Rails.root, 'db', 'seeds', 'usuario.rb')
 load File.join(Rails.root, 'db', 'seeds', 'tipo_cultivo.rb')
 load File.join(Rails.root, 'db', 'seeds', 'cultivo.rb')
 load File.join(Rails.root, 'db', 'seeds', 'tipo_solo.rb')
@@ -24,7 +24,8 @@ load File.join(Rails.root, 'db', 'seeds', 'area.rb')
 load File.join(Rails.root, 'db', 'seeds', 'status_plantio.rb')
 load File.join(Rails.root, 'db', 'seeds', 'plantio.rb')
 load File.join(Rails.root, 'db', 'seeds', 'cargo.rb')
-load File.join(Rails.root, 'db', 'seeds', 'funcionario.rb')
+# load File.join(Rails.root, 'db', 'seeds', 'funcionario.rb')
+# load File.join(Rails.root, 'db', 'seeds', 'acesso_usuario_fazenda.rb')
 
 puts 'Finished!'
 puts "****************************************"
