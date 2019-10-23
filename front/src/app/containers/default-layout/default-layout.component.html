@@ -1,11 +1,14 @@
 <app-header
-  [navbarBrandRouterLink]="['/dashboard']"
+  [navbarBrandRouterLink]="['/index.html']"
   [fixed]="true"
   [navbarBrandFull]="{src: 'assets/img/brand/logo.png', width: 87, height: 87, alt: 'To Farm'}"
   [navbarBrandMinimized]="{src: 'assets/img/brand/logo.png',width: 87, height: 87, alt: 'To Farm'}"
   [sidebarToggler]="'lg'"
   [asideMenuToggler]="'lg'">
   <ul class="nav navbar-nav d-md-down-none">
+    <li class="nav-item px-3">
+        <a class="nav-link" href="index.html">Index</a>
+    </li>
     <li class="nav-item px-3">
       <a class="nav-link" href="#">Home</a>
     </li>
@@ -53,7 +56,10 @@
 </app-header>
 <div class="app-body">
   <app-sidebar [fixed]="true" [display]="'lg'">
-    <app-sidebar-nav [navItems]="navItems" [perfectScrollbar] [disabled]="sidebarMinimized"></app-sidebar-nav>
+    <app-sidebar-nav [navItems]="navItems" [perfectScrollbar] [disabled]="sidebarMinimized"
+    
+  [navItems]="{src: 'assets/img/brand/logo.png', width: 87, height: 87, alt: 'To Farm'}">
+</app-sidebar-nav>
     <app-sidebar-minimizer></app-sidebar-minimizer>
   </app-sidebar>
   <!-- Main content -->
@@ -61,7 +67,7 @@
     <!-- Breadcrumb -->
     <!-- breaking change 'cui-breadcrumb' -->
     <cui-breadcrumb>
-      <!-- Breadcrumb Menu-->
+      <!-- Pra saber onde está-->
       <li class="breadcrumb-menu d-md-down-none">
         <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
           <a class="btn" href="#"><i class="icon-speech"></i></a>
