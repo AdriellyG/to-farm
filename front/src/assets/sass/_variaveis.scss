@@ -1,0 +1,10 @@
+$primary-color: #688865; //titulos
+$dark-color:#343a40; //texto
+$light-color:#688865; //cima;
+$gray-color:#EBE6D1; //parte de baixo
+
+@mixin text-decoration {
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+}

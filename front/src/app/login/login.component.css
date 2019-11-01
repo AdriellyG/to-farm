@@ -1,0 +1,150 @@
+@charset "UTF-8";
+.x-large {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.large {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.lead {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.dark-overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.heading-secundary {
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 3rem;
+  margin-top: 8px;
+  padding-top: 5rem;
+  color: #688865;
+}
+
+.heading-tertiary {
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 3rem;
+  color: #688865;
+  margin-top: 20px;
+  scroll-padding-bottom: 5px;
+}
+
+.heading-quartiary {
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 3rem;
+  margin-top: 8px;
+  padding-top: 5rem;
+  color: #F5F0DD;
+  text-align: center;
+}
+
+.heading-quartiary p {
+  font-size: 1.5rem;
+}
+
+.sombra {
+  /* formatação do box */
+  width: 1350px;
+  background: #f6f6f6;
+  padding: 1px;
+  /* box shadow */
+  -webkit-box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.5);
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  line-height: 1.6;
+  background-color: #688865;
+  color: #343a40;
+}
+
+a {
+  text-decoration: none;
+  color: #688865;
+}
+
+img {
+  height: 500px;
+  width: 736px;
+}
+
+.landing {
+  position: relative;
+  height: 10vh;
+}
+
+.landing-inner {
+  color: #F5F0DD;
+  height: 100%;
+  font-weight: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  widows: 50;
+  margin: auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.section-about {
+  background: #EBE6D1;
+  height: 100vh;
+}
+
+.section-about #about {
+  margin-top: 5%;
+  padding-left: 3rem;
+}
+
+.section-about .btn-text {
+  text-align: center;
+  width: 15%;
+  border-bottom: 1px solid #688865;
+}
+
+.section-about a {
+  color: #688865;
+}
+
+.section-about a:hover {
+  color: #343a40;
+}
+
+h5, h3 {
+  text-align: center;
+}
+/*# sourceMappingURL=login.component.css.map */

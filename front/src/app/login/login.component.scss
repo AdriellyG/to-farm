@@ -1,0 +1,71 @@
+@import '../../assets/sass/variaveis';
+@import'../../assets/sass/utilites';
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    line-height: 1.6;
+    background-color:#688865;
+    color:$dark-color; 
+}
+
+a{
+    text-decoration: none;
+    color:$primary-color;
+}
+img{
+   height: 500px;
+    width: 736px;
+
+}
+
+.landing{
+position: relative;
+height: 10vh;
+
+ &-inner{
+    color:#F5F0DD;
+    height: 100%;
+    font-weight: 100%;
+    display: flex;
+    flex-direction: column;
+    widows: 50;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+ }
+}
+
+.section-about{
+    background: $gray-color;
+    height: 100vh;
+
+     #about{
+         margin-top: 5%;
+         padding-left: 3rem;
+     }
+
+     .btn-text{
+      
+         text-align: center;
+         width: 15%;
+         border-bottom: 1px solid $primary-color;
+     } 
+    
+
+     a{
+         color:$primary-color;
+         &:hover{
+             color: $dark-color;
+         }
+     }
+
+}
+
+h5,h3{
+    text-align: center;
+}
