@@ -2,9 +2,10 @@ Rails.application.routes.draw do
   apipie
   scope :api, defaults: {format: :json} do
 
+    # login
     post 'auth/login', to: 'authentication#authenticate'
 
-    # Usuario
+    # cadastro
     post 'signup',     to: 'usuarios#create'
     
     resources :cultivos

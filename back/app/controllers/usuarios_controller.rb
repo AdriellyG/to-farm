@@ -14,8 +14,6 @@ class UsuariosController < ApplicationController
     render json: @usuario
   end
 
-
-
   # Retorna autenticado quando está logado
   def create
     @usuario = Usuario.create!(usuario_params)
