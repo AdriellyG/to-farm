@@ -44,17 +44,14 @@ export class AuthService {
       this.setParams('httpclient', email, password);
 
       this.headers = new HttpHeaders({
-        'Content-Type': 'text/plain',
         //'Access-Control-Allow-Origin' : '*',
         //'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE'
 
-        //'Content-Type': 'application/json',
-        //'Access-Control-Allow-Origin': '*'
-        // 'Access-Control-Allow-Origin': 'http://localhost:4200'
+        'Content-Type': 'application/json'
       });
 
       return this.http
-      .post(this.apiPath, {
+      .get(this.apiPath, {
         headers: this.headers,
         params: this.params
       });

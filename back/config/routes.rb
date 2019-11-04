@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   scope :api, defaults: {format: :json} do
 
     # login
-    post 'auth/login', to: 'authentication#authenticate'
+    get 'auth/login', to: 'authentication#authenticate'
 
     # cadastro
     post 'signup',     to: 'usuarios#create'

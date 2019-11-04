@@ -22,19 +22,6 @@ class UsuariosController < ApplicationController
     json_response(response, :created)
   end
 
-
-
-  # POST /usuarios
-  # def create
-  #   @usuario = Usuario.new(usuario_params)
-
-  #   if @usuario.save
-  #     render json: @usuario, status: :created, location: @usuario
-  #   else
-  #     render json: @usuario.errors, status: :unprocessable_entity
-  #   end
-  # end
-
   # PATCH/PUT /usuarios/1
   def update
     if @usuario.update(usuario_params)

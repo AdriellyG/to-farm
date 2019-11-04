@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   isSubmitted  =  false;
   public auth: any;
+  public dataSourceEvents: any;
   data: any;
 
   ngOnInit() {
@@ -34,9 +35,10 @@ export class LoginComponent implements OnInit {
 
   login(e){
     var a = this.authService.getAuth(this.loginForm.value.email, this.loginForm.value.password)
-    .subscribe(res => this.data = res);
+    .subscribe(res => (this.dataSourceEvents = res['data']));
+    //.subscribe(res => this.data = res);
 
-    alert(a); // teste
+    console.log(a); // teste
     
     this.isSubmitted = true;
     if(this.loginForm.invalid){

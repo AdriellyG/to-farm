@@ -17,13 +17,7 @@ class AuthenticateUsuario
     def usuario
       usuario = Usuario.find_by(email: email)
       
-      puts "###################################################"
-      puts "###################################################"
-      puts "###################################################"
-      puts usuario if usuario && usuario.authenticate(password)
-      puts "###################################################"
-      puts "###################################################"
-      puts "###################################################"
+      return usuario if usuario && usuario.authenticate(password)
       # retorna erro se credenciais forem inválidas
       raise(ExceptionHandler::AuthenticationError, Message.invalid_credentials)
     end
