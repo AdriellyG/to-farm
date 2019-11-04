@@ -150,5 +150,6 @@ export const navItems: NavData[] = [
         icon: 'icon-star'
       }
     ]
-  }
+  },
+
 ];

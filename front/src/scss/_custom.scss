@@ -1,1 +1,17 @@
 // Here you can add other styles
+.sidebar {
+    background-color: $main-color;
+
+    .nav-link{
+        &:hover {
+            color: #fff;
+            background: lighten($color: $main-color, $amount: 5);
+            
+        }
+
+        .nav-icon{
+            color: #fff;
+        }
+    }
+    
+}
