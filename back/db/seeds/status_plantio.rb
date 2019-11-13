@@ -1,8 +1,29 @@
 puts "-> Creating seeds for StatusPlantio"
 
-StatusPlantio.create!(descricao: "Agendado")
-StatusPlantio.create!(descricao: "Andamento")
-StatusPlantio.create!(descricao: "Finalizado")
+status_plantio = [
+    {
+        descricao: "Agendado"
+    },
+    {
+        descricao: "Andamento"
+    },
+    {
+        descricao: "Finalizado"
+    }
+]
 
+count = 0
+
+status_plantio.each do | item |
+    status_plantio = StatusPlantio.find_by(descricao: item[:descricao])
+
+    if !status_plantio then
+        count = count + 1
+
+        puts "=== > Creating status_plantio #{count}"
+
+        StatusPlantio.create!(descricao: item[:descricao])
+    end
+end
 puts "-> Created!"
 puts "========================================"
