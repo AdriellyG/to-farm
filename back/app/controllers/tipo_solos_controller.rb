@@ -46,6 +46,6 @@ class TipoSolosController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def tipo_solo_params
-      params.require(:tipo_solo).permit(:nome, :acidez)
+      params.permit(:nome, :acidez)
     end
 end

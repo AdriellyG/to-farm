@@ -22,7 +22,7 @@ count = 0
 
 local_fisico.each do | item |
     local_fisico = LocalFisico.find_by(
-        nome: item[:local],
+        nome: item[:nome],
         descricao: item[:descricao],
         fazenda_id: item[:fazenda_id]
     )
@@ -33,7 +33,7 @@ local_fisico.each do | item |
         puts "=== > Creating local_fisico #{count}"
         
         LocalFisico.create!(
-            nome: item[:local],
+            nome: item[:nome],
             descricao: item[:descricao],
             fazenda_id: item[:fazenda_id]
         )

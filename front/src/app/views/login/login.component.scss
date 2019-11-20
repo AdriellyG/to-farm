@@ -1,15 +1,21 @@
-@import '../../assets/sass/variaveis';
-@import'../../assets/sass/utilites';
+@import '../../../assets/sass/variaveis';
+@import '../../../assets/sass/utilites';
+@import '../../../assets/scss/style.scss';
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-body{
+
+section{
+    background-color: #688865!important;
+}
+
+.corpo{
     font-family: 'Montserrat', sans-serif;
     font-size: 2rem;
     line-height: 1.6;
-    background-color:#688865;
+    background-color:#688865!important;
     color:$dark-color; 
 }
 

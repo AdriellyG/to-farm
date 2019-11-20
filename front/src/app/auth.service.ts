@@ -1,21 +1,23 @@
 import { Injectable } from '@angular/core';
 import { User } from './user';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { Http, Headers, ResponseContentType, URLSearchParams } from '@angular/http';
+import { ApiServiceService } from  './api-service.service';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { Http, URLSearchParams } from '@angular/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private headers;
   private params;
-  public apiPath: string;
+  private apiPath: string;
   public formato: string;
   public fileType: string;
   public erroCapturado: boolean;
   public errorMenssage: string;
 
-  constructor(private http: HttpClient, private exportHttp: Http) { }
+  constructor(private http: HttpClient,
+              private exportHttp: Http,
+              private api: ApiServiceService) { }
   
   private setParams(params, email?, password?) {
     let http: HttpClient;
@@ -35,26 +37,21 @@ export class AuthService {
       this.erroCapturado = true;
     }
   }
+  
+  // 'auth_token': this.auth.getAuthToken()
+  getAuthToken(){
+    var session = sessionStorage.getItem('auth_token');
+    
+    return session;
+  }
 
   getAuth(email?, password?) {
-    let http: HttpClient;
     try {
-      this.apiPath = 'http://localhost:3000/api/auth/login';
+      this.apiPath = 'auth/login';
       
       this.setParams('httpclient', email, password);
 
-      this.headers = new HttpHeaders({
-        //'Access-Control-Allow-Origin' : '*',
-        //'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE'
-
-        'Content-Type': 'application/json'
-      });
-
-      return this.http
-      .get(this.apiPath, {
-        headers: this.headers,
-        params: this.params
-      });
+      return this.api.get(this.apiPath, this.params, true);
     } catch (Error) {
       console.log('Service: ', Error);
       this.errorMenssage = Error;
@@ -67,7 +64,8 @@ export class AuthService {
   }
 
   public isLoggedIn(){
-    return localStorage.getItem('ACCESS_TOKEN') !== null;
+    console.log("auth_token: ", sessionStorage.getItem('auth_token'));
+    return sessionStorage.getItem('auth_token') !== null;
 
   }
 

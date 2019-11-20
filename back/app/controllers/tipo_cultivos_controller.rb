@@ -46,6 +46,6 @@ class TipoCultivosController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def tipo_cultivo_params
-      params.require(:tipo_cultivo).permit(:nome)
+      params.permit(:nome)
     end
 end

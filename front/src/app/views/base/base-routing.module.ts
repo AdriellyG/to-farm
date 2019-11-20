@@ -1,17 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { CardsComponent } from './cards.component';
-import { FormsComponent } from './forms.component';
-import { SwitchesComponent } from './switches.component';
-import { TablesComponent } from './tables.component';
-import { TabsComponent } from './tabs.component';
-import { CarouselsComponent } from './carousels.component';
-import { CollapsesComponent } from './collapses.component';
-import { PaginationsComponent } from './paginations.component';
-import {PopoversComponent} from './popovers.component';
-import {ProgressComponent} from './progress.component';
-import {TooltipsComponent} from './tooltips.component';
+import { TipoCultivoComponent } from './tipo-cultivo.component';
+import { TipoSoloComponent } from './tipo-solo.component';
+import { AreaComponent } from './area.component';
 
 const routes: Routes = [
   {
@@ -25,80 +17,24 @@ const routes: Routes = [
         redirectTo: 'área1'
       },
       {
-        path: 'cards',
-        component: CardsComponent,
+        path: 'tipo-cultivo',
+        component: TipoCultivoComponent,
         data: {
-          title: 'área2'
+          title: 'Tipo cultivo'
         }
       },
       {
-        path: 'forms',
-        component: FormsComponent,
+        path: 'tipo-solo',
+        component: TipoSoloComponent,
         data: {
-          title: 'Forms'
+          title: 'Tipo solo'
         }
       },
       {
-        path: 'switches',
-        component: SwitchesComponent,
+        path: 'area',
+        component: AreaComponent,
         data: {
-          title: 'Switches'
-        }
-      },
-      {
-        path: 'tables',
-        component: TablesComponent,
-        data: {
-          title: 'Tables'
-        }
-      },
-      {
-        path: 'tabs',
-        component: TabsComponent,
-        data: {
-          title: 'Tabs'
-        }
-      },
-      {
-        path: 'carousels',
-        component: CarouselsComponent,
-        data: {
-          title: 'Carousels'
-        }
-      },
-      {
-        path: 'collapses',
-        component: CollapsesComponent,
-        data: {
-          title: 'Collapses'
-        }
-      },
-      {
-        path: 'paginations',
-        component: PaginationsComponent,
-        data: {
-          title: 'Pagination'
-        }
-      },
-      {
-        path: 'popovers',
-        component: PopoversComponent,
-        data: {
-          title: 'Popover'
-        }
-      },
-      {
-        path: 'progress',
-        component: ProgressComponent,
-        data: {
-          title: 'Progress'
-        }
-      },
-      {
-        path: 'tooltips',
-        component: TooltipsComponent,
-        data: {
-          title: 'Tooltips'
+          title: 'Área'
         }
       }
     ]

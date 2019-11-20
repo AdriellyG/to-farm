@@ -36,96 +36,19 @@ export const navItems: NavData[] = [
     name: 'Funções'
   },
   {
-    name: 'Áreas',
-    url: '/base',
-    icon: 'icon-puzzle',
-    children: [
-      {
-        name: 'Área 1 ',
-        url: '/base/cards',
-        icon: 'icon-puzzle'
-      },
-      {
-        name: 'Área 2',
-        url: '/base/carousels',
-        icon: 'icon-puzzle'
-      },
-      {
-        name: 'Área 3',
-        url: '/base/collapses',
-        icon: 'icon-puzzle'
-      },
-      {
-        name: 'Área 4',
-        url: '/base/forms',
-        icon: 'icon-puzzle'
-      },
-    ]
+    name: 'Tipo Cultivo',
+    url: '/base/tipo-cultivo',
+    icon: 'icon-puzzle'
   },
   {
-    name: 'Produtos',
-    url: '/buttons',
-    icon: 'icon-cursor',
-    children: [
-      {
-        name: 'Pinga de Banana',
-        url: '/buttons/buttons',
-        icon: 'icon-cursor'
-      },
-      {
-        name: 'Doce de Banana',
-        url: '/buttons/dropdowns',
-        icon: 'icon-cursor'
-      }
-    ]
+    name: 'Tipo Solo',
+    url: '/base/tipo-solo',
+    icon: 'icon-puzzle'
   },
   {
-    name: 'Colheita',
-    url: '/charts',
-    icon: 'icon-pie-chart'
-  },
-  {
-    name: 'Pulverização',
-    url: '/icons',
-    icon: 'icon-star',
-    children: [
-      {
-        name: 'Área 1',
-        url: '/icons/coreui-icons',
-        icon: 'icon-star',
-        badge: {
-          variant: 'success',
-          text: 'Fazendo'
-        }
-      },
-      {
-        name: 'Área 2',
-        url: '/icons/flags',
-        icon: 'icon-star'
-      }
-    ]
-  },
-  {
-    name: 'Alertas',
-    url: '/notifications',
-    icon: 'icon-bell',
-    children: [
-      {
-        name: 'Chegada de pá',
-        url: '/notifications/alerts',
-        icon: 'icon-bell'
-      },
-      {
-        name: 'Pagamento',
-        url: '/notifications/badges',
-        icon: 'icon-bell'
-      }
-    ]
-  },
-  {
-    name: 'Visão Geral',
-    url: '/widgets',
-    icon: 'icon-calculator'
+    name: 'Área',
+    url: '/base/area',
+    icon: 'icon-puzzle'
   },
   {
     divider: true
@@ -141,7 +64,7 @@ export const navItems: NavData[] = [
     children: [
       {
         name: 'Login',
-        url: '/login',
+        url: 'login',
         icon: 'icon-star'
       },
       {

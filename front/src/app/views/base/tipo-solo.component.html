@@ -1,0 +1,66 @@
+<div class="container sombra">
+    <main>                    
+        <section class="section-about ">
+            <div class="row ">
+                <div class="container">
+                    <div *ngIf="mainForm">
+                        <h3>Listar Tipos de solo</h3><br/>
+                        <table class=" table">
+                            <thead>
+                                <tr class="table-success">
+                                    <th scope="col">Número</th>
+                                    <th scope="col">Nome</th>
+                                    <th scope="col">Acidez</th>
+                                    <th>Editar</th>
+                                    <th>Excluir</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of data">
+                                    <td>{{item.id}}</td>
+                                    <td>{{item.nome}}</td>
+                                    <td>{{item.acidez}}</td>
+                                    <td><button type="submit" class="btn btn-sucess" (click)="setId(item_id = item.id)">Editar</button></td>
+                                    <td><button type="submit" class="btn btn-sucess" (click)="deleteType(item.id)">Deletar</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <br />
+
+                    <div *ngIf="newForm">
+                        <form class="heading-quartiary" [formGroup]="newTypeForm">
+                            <h3>Novo registro</h3>
+                            <div class="form-group">
+                                <label for="type"><h4>Nome:</h4></label>
+                                <input type="text" class="form-control col-md-4" placeholder="Nome" formControlName="nome" id="nome" aria-describedby="nomeHelp">
+                                <br>
+                                <label for="type"><h4>Nome:</h4></label>
+                                <input type="text" class="form-control col-md-4" placeholder="Acidez" formControlName="acidez" id="acidez" aria-describedby="acidezHelp">
+                            </div>
+                        </form>
+                    </div>
+                    <button *ngIf="!editForm" type="submit" class="btn btn-success" (click)="newType(this)">Novo</button>
+
+                    <div *ngIf="editForm">
+                        <form class="heading-quartiary" [formGroup]="editTypeForm" (ngSubmit)="editType(item_id)">
+                            <h3>Editar registro</h3>
+                            <br />
+                            <div class="form-group">
+                                <label for="nome"><h4>Nome:</h4></label>
+                                <input type="text" class="form-control col-md-4" placeholder="Nome" formControlName="nome" id="nome" aria-describedby="nomeHelp">
+                                <br>
+                                <label for="acidez"><h4>Acidez:</h4></label>
+                                <input type="text" class="form-control col-md-4" placeholder="Acidez" formControlName="acidez" id="acidez" aria-describedby="acidezHelp">
+
+                                <input type="submit" class="btn btn-success" value="Concluir" id="btnEdit">
+                                
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>

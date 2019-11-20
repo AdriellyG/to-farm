@@ -2,19 +2,14 @@ puts "-> Creating seeds for Usuario..."
 
 usuarios = [
     {
-        email: "adriellygalvao@yahoo.com",
-        password_digest: "mortadela124",
+        email: "adrielly@email.com",
+        password_digest: "$2y$12$XTCJtlsNyS3IfgK069a6kewoEjxRRW7Xo3VlVWuUFjp6xbwetZ672",
         pessoa_fisicas_id: 1
     },
     {
-        email: "adrielly@yahoo.com",
-        password_digest: "mortadela443",
+        email: "fernanda@email.com",
+        password_digest: "$2y$12$AR4xMDvIFBrUW0IPq1IXi.ljVbPxq/6g9bYwEOxlSiLQLz.wQKDoi",
         pessoa_fisicas_id: 2
-    },
-    {
-        email: "adriellyg@yahoo.com",
-        password_digest: "mortadela041",
-        pessoa_fisicas_id: 3
     }
 
 ]
@@ -22,9 +17,8 @@ usuarios = [
 count = 0
 
 usuarios.each do | item |
-    Usuario.find_by(
+    usuarios = Usuario.find_by(
         email: item[:email],
-        password_digest: item[:password_digest],
         pessoa_fisicas_id: item[:pessoa_fisicas_id]
     )
 
@@ -34,6 +28,7 @@ usuarios.each do | item |
         Usuario.create!(
             email: item[:email],
             password_digest: item[:password_digest],
+            #password_confirmation: item[:password_confirmation],
             pessoa_fisicas_id: item[:pessoa_fisicas_id]
         )
     end
