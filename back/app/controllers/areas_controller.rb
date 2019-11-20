@@ -3,7 +3,7 @@ class AreasController < ApplicationController
 
   # GET /areas
   def index
-    @areas = Area.all
+    @areas = Areadb.get_areas
 
     render json: @areas
   end

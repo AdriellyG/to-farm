@@ -55,3 +55,6 @@ gem 'dotenv-rails'
 
 # BDD for Ruby
 gem 'rspec', '~> 3.9'
+
+# Simplifies the generation of complex SQL queries
+gem 'arel', '~> 9.0'

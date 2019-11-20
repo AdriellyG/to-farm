@@ -116,8 +116,8 @@ export class AreaComponent implements OnInit {
 
     if (!this.newForm ) {
       this.api.post(this.apiUrl, {
-          nome:            this.newAreaForm.value.nome,
-          fazenda_id:      1,
+          nome:             this.newAreaForm.value.nome,
+          fazendas_id:      1,
           tipo_solo_id:    this.newAreaForm.value.tipoSolo,
           local_fisico_id: this.newAreaForm.value.localFisico
         })

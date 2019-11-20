@@ -10,7 +10,8 @@
                                 <tr class="table-success">
                                     <th scope="col">Número</th>
                                     <th scope="col">Nome</th>
-                                    <th scope="col">Acidez</th>
+                                    <th scope="col">Local</th>
+                                    <th scope="col">Tipo solo</th>
                                     <th>Editar</th>
                                     <th>Excluir</th>
                                 </tr>
@@ -19,7 +20,8 @@
                                 <tr *ngFor="let item of data">
                                     <td>{{item.id}}</td>
                                     <td>{{item.nome}}</td>
-                                    <td>{{item.acidez}}</td>
+                                    <td>{{item.local}}</td>
+                                    <td>{{item.tipo_solo}}</td>
                                     <td><button type="submit" class="btn btn-sucess" (click)="setId(item_id = item.id)">Editar</button></td>
                                     <td><button type="submit" class="btn btn-sucess" (click)="deleteArea(item.id)">Deletar</button></td>
                                 </tr>
