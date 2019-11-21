@@ -6,6 +6,7 @@ import { NgModule } from '@angular/core';
 import { TipoCultivoComponent } from './tipo-cultivo.component';
 import { TipoSoloComponent } from './tipo-solo.component';
 import { AreaComponent } from './area.component';
+import { CultivoComponent } from './cultivo.component';
 
 // Collapse Component
 import { CollapseModule } from 'ngx-bootstrap/collapse';
@@ -50,7 +51,8 @@ import { BaseRoutingModule } from './base-routing.module';
   declarations: [
     TipoCultivoComponent,
     TipoSoloComponent,
-    AreaComponent
+    AreaComponent,
+    CultivoComponent
   ]
 })
 export class BaseModule { }

@@ -17,6 +17,12 @@ class AreasController < ApplicationController
   def create
     @area = Area.new(area_params)
 
+    puts "##########################"
+    puts "##########################"
+    puts "#{area_params}"
+    puts "##########################"
+    puts "##########################"
+
     if @area.save
       render json: @area, status: :created, location: @area
     else
@@ -46,6 +52,6 @@ class AreasController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def area_params
-      params.require(:area).permit(:nome, :fazendas_id, :tipo_solos_id, :local_fisicos_id)
+      params.require(:area).permit(:nome, :fazenda_id, :tipo_solo_id, :local_fisico_id)
     end
 end

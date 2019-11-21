@@ -3,7 +3,7 @@ class CultivosController < ApplicationController
 
   # GET /cultivos
   def index
-    @cultivos = Cultivo.all
+    @cultivos = Cultivodb.get_cultivos
 
     render json: @cultivos
   end
@@ -46,6 +46,6 @@ class CultivosController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def cultivo_params
-      params.require(:cultivo).permit(:nome, :tipo_cultivo_id, :fazenda_id)
+      params.require(:cultivo).permit(:nome, :tipo_cultivos_id, :fazendas_id)
     end
 end

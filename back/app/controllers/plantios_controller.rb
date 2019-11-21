@@ -46,6 +46,6 @@ class PlantiosController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def plantio_params
-      params.require(:plantio).permit(:dt_inicial, :dt_final, :areas_id, :fazendas_id, :cultivos_id, :status_plantios_id)
+      params.require(:plantio).permit(:dt_inicial, :dt_final, :area_id, :fazenda_id, :cultivo_id, :status_plantio_id)
     end
 end

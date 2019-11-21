@@ -41,13 +41,28 @@ export const navItems: NavData[] = [
     icon: 'icon-puzzle'
   },
   {
+    name: 'Cultivo',
+    url: '/base/cultivo',
+    icon: 'icon-puzzle'
+  },
+  {
     name: 'Tipo Solo',
     url: '/base/tipo-solo',
     icon: 'icon-puzzle'
   },
   {
+    name: 'Local físico',
+    url: '/base/local-fisico',
+    icon: 'icon-puzzle'
+  },
+  {
     name: 'Área',
     url: '/base/area',
+    icon: 'icon-puzzle'
+  },
+  {
+    name: 'Plantio',
+    url: '/base/plantio',
     icon: 'icon-puzzle'
   },
   {

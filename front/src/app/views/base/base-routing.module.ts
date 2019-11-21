@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { TipoCultivoComponent } from './tipo-cultivo.component';
 import { TipoSoloComponent } from './tipo-solo.component';
 import { AreaComponent } from './area.component';
+import { CultivoComponent } from './cultivo.component';
 
 const routes: Routes = [
   {
@@ -35,6 +36,13 @@ const routes: Routes = [
         component: AreaComponent,
         data: {
           title: 'Área'
+        }
+      },
+      {
+        path: 'cultivo',
+        component: CultivoComponent,
+        data: {
+          title: 'Cultivo'
         }
       }
     ]
