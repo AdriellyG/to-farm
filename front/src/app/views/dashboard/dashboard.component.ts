@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { getStyle, hexToRgba } from '@coreui/coreui/dist/js/coreui-utilities';
 import { CustomTooltips } from '@coreui/coreui-plugin-chartjs-custom-tooltips';
+import { AuthService } from '../../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   templateUrl: 'dashboard.component.html'
@@ -8,6 +10,10 @@ import { CustomTooltips } from '@coreui/coreui-plugin-chartjs-custom-tooltips';
 export class DashboardComponent implements OnInit {
 
   radioModel: string = 'Month';
+  constructor( private auth: AuthService,
+               private router: Router ){
+
+  }
 
   // lineChart1
   public lineChart1Data: Array<any> = [
@@ -383,6 +389,10 @@ export class DashboardComponent implements OnInit {
       this.mainChartData1.push(this.random(50, 200));
       this.mainChartData2.push(this.random(80, 100));
       this.mainChartData3.push(65);
+    }
+
+    if ( !this.auth.isLoggedIn() ) {
+      this.router.navigate(['/login']);
     }
   }
 }

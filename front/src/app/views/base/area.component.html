@@ -59,16 +59,24 @@
                     <div *ngIf="editForm">
                         <form class="heading-quartiary" [formGroup]="editAreaForm" (ngSubmit)="editArea(item_id)">
                             <h3>Editar registro</h3>
-                            <br />
                             <div class="form-group">
                                 <label for="nome"><h4>Nome:</h4></label>
                                 <input type="text" class="form-control col-md-4" placeholder="Nome" formControlName="nome" id="nome" aria-describedby="nomeHelp">
                                 <br>
-                                <label for="acidez"><h4>Acidez:</h4></label>
-                                <input type="text" class="form-control col-md-4" placeholder="Acidez" formControlName="acidez" id="acidez" aria-describedby="acidezHelp">
-
+                                <label for="local-fisico"><h4>Local físico:</h4></label>
+                                <select class="form-control col-md-4" formControlName="localFisico" id="local-fisico">
+                                    <option *ngFor="let local of locais" [value]="local.id">
+                                        {{local.nome}}
+                                    </option>
+                                </select>
+                                <br>
+                                <label for="tipo-solo"><h4>Tipo solo:</h4></label>
+                                <select class="form-control col-md-4" formControlName="tipoSolo" id="tipo-solo">
+                                    <option *ngFor="let solo of solos" [value]="solo.id">
+                                        {{solo.nome}}
+                                    </option>
+                                </select>
                                 <input type="submit" class="btn btn-success" value="Concluir" id="btnEdit">
-                                
                             </div>
                         </form>
                     </div>

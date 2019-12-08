@@ -3,32 +3,29 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from  '@angular/forms';
 import { AuthService } from  '../../auth.service';
 import { ApiServiceService } from  '../../api-service.service';
-import { stringify } from '@angular/compiler/src/util';
 
 @Component({
-  templateUrl: 'area.component.html'
+  templateUrl: 'local-fisico.component.html'
 })
-export class AreaComponent implements OnInit {
+export class LocalFisicoComponent implements OnInit {
   constructor( private authService: AuthService,
                private router: Router,
                private formBuilder: FormBuilder,
                private api: ApiServiceService,
                private auth: AuthService ) { }
   
-  private apiUrl: string = 'areas';
+  private apiUrl: string = 'local_fisicos';
   private item_id: number;
   private data: any;
   private locais: any;
-  private solos: any;
   private local_id: any;
-  private solo_id: any;
   private newForm: Boolean = false;
   private editForm: Boolean = false;
   private mainForm: Boolean = true;
   public erroCapturado: boolean;
   public errorMenssage: string;
-  newAreaForm: FormGroup;
-  editAreaForm: FormGroup;
+  newLocalForm: FormGroup;
+  editLocalForm: FormGroup;
 
   ngOnInit() {
     if (!this.auth.isLoggedIn()){
@@ -36,74 +33,35 @@ export class AreaComponent implements OnInit {
       this.router.navigate(['login']);
     }
 
-    this.newAreaForm = this.formBuilder.group({
+    this.newLocalForm = this.formBuilder.group({
       nome: ['', Validators.required],
-      tipoSolo: ['', Validators.required],
-      localFisico: ['', Validators.required]
+      descricao: ['', Validators.required]
     });
 
-    this.editAreaForm = this.formBuilder.group({
+    this.editLocalForm = this.formBuilder.group({
       nome: ['', Validators.required],
-      tipoSolo: ['', Validators.required],
-      localFisico: ['', Validators.required]
+      descricao: ['', Validators.required]
     });
 
-    this.getArea();
-    this.getTipoSolo();
     this.getLocal();
-
-    //this.getTipoSoloId(1);
-    //this.getLocalId(1);
-    //console.log("tipo_solo_id: ", this.solo_id);
-    //console.log("local_id: ", this.local_id);
 
     this.newForm = false;
   }
 
   get formControls() {
-    return this.newAreaForm.controls;
+    return this.newLocalForm.controls;
   }
 
   // get all
 
-  getArea(){
+  getLocal(){
     this.api.get(this.apiUrl)
       .subscribe(
         res => this.data = res
       );
   }
 
-  getTipoSolo(){
-    this.api.get('tipo_solos')
-      .subscribe(
-        res => this.solos = res
-      );
-  }
-
-  getLocal(){
-    this.api.get('local_fisicos')
-      .subscribe(
-        res => this.locais = res
-      );
-  }
-
-  // get id
-
-  getTipoSoloId(id){
-    this.api.get('tipo_solos' + "/" + id)
-      .subscribe(
-        res => this.solo_id = res
-      );
-  }
-
-  getLocalId(id){
-    this.api.get('local_fisicos' + "/" + id)
-      .subscribe(
-        res => this.local_id = res
-      );
-  }
-
-  newArea(e){
+  newLocal(e){
     this.newForm = !this.newForm;
     
     if ( this.newForm ) {
@@ -112,28 +70,26 @@ export class AreaComponent implements OnInit {
       this.mainForm = true;
     }
 
-    console.log("local_fisico: ", this.newAreaForm.value.localFisico);
-    console.log("tipo_solo: ", this.newAreaForm.value.tipoSolo);
-
     if (!this.newForm ) {
       this.api.post(this.apiUrl, {
-          area: {
-            nome:             this.newAreaForm.value.nome,
+          local_fisico: {
+            nome:             this.newLocalForm.value.nome,
             fazenda_id:      1,
-            tipo_solo_id:    this.newAreaForm.value.tipoSolo,
-            local_fisico_id: this.newAreaForm.value.localFisico
+            descricao:    this.newLocalForm.value.descricao
           }
         })
         .subscribe(
           data => {
             console.log("Post request is sucessful", data);
-            this.getArea();
+            this.getLocal();
           },
           error => {
             console.log("Error", error);
           }
         );
     }
+
+    this.getLocal();
   }
 
   setId(id){
@@ -146,18 +102,19 @@ export class AreaComponent implements OnInit {
     }
   }
 
-  editArea(id){
+  editLocal(id){
     if ( this.editForm ) {
       this.api.patch(this.apiUrl + "/" + id, {
-          nome: this.newAreaForm.value.nome,
-          fazenda_id: 1,
-          tipo_solo_id: this.newAreaForm.value.tipoSolo,
-          local_fisico_id: this.newAreaForm.value.localFisico
+          local_fisico: {
+            nome:             this.editLocalForm.value.nome,
+            fazenda_id:      1,
+            descricao:    this.editLocalForm.value.descricao
+          }
         })
         .subscribe(
           data => {
             console.log("Patch request is sucessful", data);
-            this.getArea();
+            this.getLocal();
           },
           error => {
             console.log("Error", error);
@@ -167,19 +124,23 @@ export class AreaComponent implements OnInit {
 
     this.editForm = false;
     this.mainForm = true;
+
+    this.getLocal();
   }
 
-  deleteArea(id){
+  deleteLocal(id){
     this.api.delete(this.apiUrl + "/" + id)
         .subscribe(
           data  => {
           console.log("Delete request is successful ", data);
-          this.getArea();
+          this.getLocal();
         },
         error  => {
           console.log("Error", error);
         }
       
       );
+    
+    this.getLocal();
   }
 }

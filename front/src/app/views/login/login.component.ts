@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from  '@angular/forms';
 import { Router } from  '@angular/router';
-//import { User } from  '../user';
-//import {MatDialogModule} from '@angular/material/dialog';
 
 import { AuthService } from  '../../auth.service';
 
@@ -35,17 +33,16 @@ export class LoginComponent implements OnInit {
   }
 
   login(e){
-    this.authService.getAuth(this.loginForm.value.email, /*btoa(encodeURIComponent(*/this.loginForm.value.password)/*))*/
+    this.authService.getAuth(this.loginForm.value.email, this.loginForm.value.password)
       .subscribe(
         data => {
-          // login successful if there's a jwt token in the response
+          // loga com sucesso se o jwt token obter resposta valida
           if (data && data['auth_token']) {
-            // store email and jwt token in local storage to keep user logged in between page refreshes
+            // armazena token para que o usuário possa permanecer logado e fazer requisições para a API
             sessionStorage.setItem('auth_token_json', JSON.stringify({ token: data['auth_token'] }));
             sessionStorage.setItem('auth_token', data['auth_token']);
           }
           this.router.navigate(['/dashboard']);
-          //this.router.navigate(['/tipo-cultivo']);
         },
         error => {
           if (error.status === 401) {
@@ -57,10 +54,6 @@ export class LoginComponent implements OnInit {
       );
     
     this.isSubmitted = true;
-    // if(this.loginForm.invalid){
-    //  return;
-    //}
-    // this.authService.login(this.loginForm.value);
   }
 
   msg(m) {

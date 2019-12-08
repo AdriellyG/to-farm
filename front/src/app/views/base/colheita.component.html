@@ -1,0 +1,41 @@
+<div class="container sombra">
+    <main>                    
+        <section class="section-about ">
+            <div class="row ">
+                <div class="container">
+                    <div>
+                        <h3>Relatório de colheitas</h3><br/>
+                        <div class="row">
+                            <button type="submit" class="btn btn-sucess col-md-3" (click)="getColheitaDay()">Dia</button>
+                            <button type="submit" class="btn btn-sucess col-md-3" (click)="getColheitaWeek()">Semana</button>
+                            <button type="submit" class="btn btn-sucess col-md-3" (click)="getColheitaMonth()">Mês</button>
+                            <button type="submit" class="btn btn-sucess col-md-3" (click)="getColheitaYear()">Ano</button>
+                        </div>
+                        <table class=" table">
+                            <thead>
+                                <tr class="table-success">
+                                    <th scope="col">Número</th>
+                                    <th scope="col">Data inicial</th>
+                                    <th scope="col">Data final</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Cultivo</th>
+                                    <th scope="col">Área</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of data">
+                                    <td>{{item.id}}</td>
+                                    <td>{{item.dt_inicial}}</td>
+                                    <td>{{item.dt_final}}</td>
+                                    <td>{{item.status}}</td>
+                                    <td>{{item.cultivo}}</td>
+                                    <td>{{item.area}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>

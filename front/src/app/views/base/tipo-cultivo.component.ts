@@ -44,6 +44,12 @@ export class TipoCultivoComponent implements OnInit {
     this.newForm = false;
   }
 
+  load() {
+    //Session storage salva os dados como string
+    (sessionStorage.refresh == 'true' || !sessionStorage.refresh) && location.reload();
+    sessionStorage.refresh = false;
+  }
+
   get formControls() {
     return this.newTypeForm.controls;
   }
@@ -55,26 +61,30 @@ export class TipoCultivoComponent implements OnInit {
       );
   }
 
+  reload_page(){
+    this.data = this.getTipoCultivo();
+  }
+
   newType(e){
     this.newForm = !this.newForm;
-
-    if ( this.newForm ) {
-      this.mainForm = false;
-    } else {
-      this.mainForm = true;
-    }
-
 
     if (!this.newForm ) {
       this.api.post(this.apiUrl, { nome: this.newTypeForm.value.typeName })
         .subscribe(
           data => {
             console.log("Post request is sucessful", data);
+            this.reload_page();
           },
           error => {
             console.log("Error", error);
           }
         );
+    }
+
+    if ( this.newForm ) {
+      this.mainForm = false;
+    } else {
+      this.mainForm = true;
     }
   }
 
@@ -88,12 +98,13 @@ export class TipoCultivoComponent implements OnInit {
     }
   }
 
-  editType(id){
+  editType(id){    
     if ( this.editForm ) {
       this.api.patch(this.apiUrl + "/" + id, {nome: this.editTypeForm.value.typeName})
         .subscribe(
           data => {
             console.log("Patch request is sucessful", data);
+            this.reload_page();
           },
           error => {
             console.log("Error", error);
@@ -111,6 +122,7 @@ export class TipoCultivoComponent implements OnInit {
         .subscribe(
           data  => {
           console.log("Delete request is successful ", data);
+          this.reload_page();
         },
         error  => {
           console.log("Error", error);

@@ -5,6 +5,9 @@ import { TipoCultivoComponent } from './tipo-cultivo.component';
 import { TipoSoloComponent } from './tipo-solo.component';
 import { AreaComponent } from './area.component';
 import { CultivoComponent } from './cultivo.component';
+import { LocalFisicoComponent } from './local-fisico.component';
+import { PlantioComponent } from './plantio.component';
+import { ColheitaComponent } from './colheita.component';
 
 const routes: Routes = [
   {
@@ -43,6 +46,27 @@ const routes: Routes = [
         component: CultivoComponent,
         data: {
           title: 'Cultivo'
+        }
+      },
+      {
+        path: 'local-fisico',
+        component: LocalFisicoComponent,
+        data: {
+          title: 'Locais físicos'
+        }
+      },
+      {
+        path: 'plantio',
+        component: PlantioComponent,
+        data: {
+          title: 'Plantios'
+        }
+      },
+      {
+        path: 'colheita',
+        component: ColheitaComponent,
+        data: {
+          title: 'Colheitas'
         }
       }
     ]

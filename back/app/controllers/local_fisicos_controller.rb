@@ -46,6 +46,6 @@ class LocalFisicosController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def local_fisico_params
-      params.require(:local_fisico).permit(:nome, :descricao, :fazendas_id)
+      params.require(:local_fisico).permit(:nome, :descricao, :fazenda_id)
     end
 end

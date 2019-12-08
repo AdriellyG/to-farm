@@ -3,6 +3,7 @@ import { User } from './user';
 import { ApiServiceService } from  './api-service.service';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Http, URLSearchParams } from '@angular/http';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -15,9 +16,10 @@ export class AuthService {
   public erroCapturado: boolean;
   public errorMenssage: string;
 
-  constructor(private http: HttpClient,
-              private exportHttp: Http,
-              private api: ApiServiceService) { }
+  constructor( private http: HttpClient,
+               private exportHttp: Http,
+               private api: ApiServiceService,
+               private router: Router ) { }
   
   private setParams(params, email?, password?) {
     let http: HttpClient;
@@ -38,13 +40,14 @@ export class AuthService {
     }
   }
   
-  // 'auth_token': this.auth.getAuthToken()
+  // traz o token
   getAuthToken(){
     var session = sessionStorage.getItem('auth_token');
     
     return session;
   }
 
+  // faz requisição para o back, e autoriza ou não
   getAuth(email?, password?) {
     try {
       this.apiPath = 'auth/login';
@@ -70,6 +73,7 @@ export class AuthService {
   }
 
   public logout(){
-    localStorage.removeItem('ACCESS_TOKEN');
+    localStorage.removeItem('auth_token');
+    this.router.navigate(['/login']);
   }
 }

@@ -1,6 +1,7 @@
 import { Component, OnDestroy, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { navItems } from '../../_nav';
+import { AuthService } from '../../auth.service';
 
 
 @Component({
@@ -9,6 +10,7 @@ import { navItems } from '../../_nav';
 })
 export class DefaultLayoutComponent implements OnDestroy {
   public navItems = navItems;
+  private auth: AuthService;
   public sidebarMinimized = true;
   private changes: MutationObserver;
   public element: HTMLElement;
@@ -26,5 +28,9 @@ export class DefaultLayoutComponent implements OnDestroy {
 
   ngOnDestroy(): void {
     this.changes.disconnect();
+  }
+
+  logout(){
+    this.auth.logout();
   }
 }

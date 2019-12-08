@@ -3,7 +3,7 @@ class PlantiosController < ApplicationController
 
   # GET /plantios
   def index
-    @plantios = Plantio.all
+    @plantios = Plantiodb.get_all
 
     render json: @plantios
   end

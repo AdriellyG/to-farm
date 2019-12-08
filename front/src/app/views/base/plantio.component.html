@@ -1,0 +1,93 @@
+<div class="container sombra">
+    <main>                    
+        <section class="section-about ">
+            <div class="row ">
+                <div class="container">
+                    <div *ngIf="mainForm">
+                        <h3>Listar Plantios</h3><br/>
+                        <table class=" table">
+                            <thead>
+                                <tr class="table-success">
+                                    <th scope="col">Número</th>
+                                    <th scope="col">Data inicial</th>
+                                    <th scope="col">Data final</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Cultivo</th>
+                                    <th scope="col">Área</th>
+                                    <th>Editar</th>
+                                    <th>Excluir</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of data">
+                                    <td>{{item.id}}</td>
+                                    <td>{{item.dt_inicial}}</td>
+                                    <td>{{item.dt_final}}</td>
+                                    <td>{{item.status}}</td>
+                                    <td>{{item.cultivo}}</td>
+                                    <td>{{item.area}}</td>
+                                    <td><button type="submit" class="btn btn-sucess" (click)="setId(item_id = item.id)">Editar</button></td>
+                                    <td><button type="submit" class="btn btn-sucess" (click)="deletePlantio(item.id)">Deletar</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <br />
+
+                    <div *ngIf="newForm">
+                        <form class="heading-quartiary" [formGroup]="newPlantioForm">
+                            <h3>Novo registro</h3>
+                            <div class="form-group">
+                                <label for="type"><h4>Data inicial:</h4></label>
+                                <input type="date" class="form-control col-md-4" placeholder="Data inicial" formControlName="dt_inicial" id="dt_inicial" aria-describedby="dtInicioHelp">
+                                <br>
+                                <label for="type"><h4>Data final:</h4></label>
+                                <input type="date" class="form-control col-md-4" placeholder="Data final" formControlName="dt_final" id="dt_final" aria-describedby="dtFinalHelp">
+                                <br>
+                                <label for="area-id"><h4>Área:</h4></label>
+                                <select class="form-control col-md-4" formControlName="area_id" id="area-id">
+                                    <option *ngFor="let area of areas" [value]="area.id">
+                                        {{area.nome}}
+                                    </option>
+                                </select>
+                                <br>
+                                <label for="cultivo-id"><h4>Cultivo:</h4></label>
+                                <select class="form-control col-md-4" formControlName="cultivo_id" id="cultivo-id">
+                                    <option *ngFor="let cultivo of cultivos" [value]="cultivo.id">
+                                        {{cultivo.nome}}
+                                    </option>
+                                </select>
+                                <br>
+                                <label for="status-plantio-id"><h4>Status:</h4></label>
+                                <select class="form-control col-md-4" formControlName="status_plantio_id" id="status-plantio-id">
+                                    <option *ngFor="let status_plantio of status_plantios" [value]="status_plantio.id">
+                                        {{status_plantio.nome}}
+                                    </option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    <button *ngIf="!editForm" type="submit" class="btn btn-success" (click)="newPlantio(this)">Novo</button>
+
+                    <div *ngIf="editForm">
+                        <form class="heading-quartiary" [formGroup]="editPlantioForm" (ngSubmit)="editPlantio(item_id)">
+                            <h3>Editar registro</h3>
+                            <br />
+                            <div class="form-group">
+                                <label for="nome"><h4>Nome:</h4></label>
+                                <input type="text" class="form-control col-md-4" placeholder="Nome" formControlName="nome" id="nome" aria-describedby="nomeHelp">
+                                <br>
+                                <label for="acidez"><h4>Acidez:</h4></label>
+                                <input type="text" class="form-control col-md-4" placeholder="Acidez" formControlName="acidez" id="acidez" aria-describedby="acidezHelp">
+
+                                <input type="submit" class="btn btn-success" value="Concluir" id="btnEdit">
+                                
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>

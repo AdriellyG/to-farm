@@ -34,6 +34,9 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
 // Components Routing
 import { BaseRoutingModule } from './base-routing.module';
+import { LocalFisicoComponent } from './local-fisico.component';
+import { PlantioComponent } from './plantio.component'
+import { ColheitaComponent } from './colheita.component';
 
 @NgModule({
   imports: [
@@ -52,7 +55,10 @@ import { BaseRoutingModule } from './base-routing.module';
     TipoCultivoComponent,
     TipoSoloComponent,
     AreaComponent,
-    CultivoComponent
+    CultivoComponent,
+    LocalFisicoComponent,
+    PlantioComponent,
+    ColheitaComponent
   ]
 })
 export class BaseModule { }

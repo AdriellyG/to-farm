@@ -66,6 +66,11 @@ export const navItems: NavData[] = [
     icon: 'icon-puzzle'
   },
   {
+    name: 'Colheita',
+    url: '/base/colheita',
+    icon: 'icon-puzzle'
+  },
+  {
     divider: true
   },
   {
