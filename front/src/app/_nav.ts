@@ -36,6 +36,11 @@ export const navItems: NavData[] = [
     name: 'Funções'
   },
   {
+    name: 'HOME',
+    url: '/dashboard',
+    icon: 'icon-puzzle'
+  },
+  {
     name: 'Tipo Cultivo',
     url: '/base/tipo-cultivo',
     icon: 'icon-puzzle'

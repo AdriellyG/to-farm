@@ -8,6 +8,24 @@ class AreasController < ApplicationController
     render json: @areas
   end
 
+  def get_areas_total_usadas
+    @area = Areadb.get_areas_total_usadas
+
+    render json: @area
+  end
+
+  def get_areas_total_disponiveis
+    @area = Areadb.get_areas_total_disponiveis
+
+    render json: @area
+  end
+  
+  def get_areas_total
+    @area = Areadb.get_areas_total
+
+    render json: @area
+  end
+
   # GET /areas/1
   def show
     render json: @area

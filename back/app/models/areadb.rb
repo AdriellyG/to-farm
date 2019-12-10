@@ -15,4 +15,46 @@ class Areadb < ActiveRecord::Base
   
         sql = ActiveRecord::Base.connection.select_all(sql)
     end
+
+    def self.get_areas_total_usadas
+        sql = "
+        select count(a.id) as total
+            from areas a
+            left join plantios p on ( a.id = p.areas_id )
+            where p.areas_id is not null"
+  
+        sql = ActiveRecord::Base.connection.select_all(sql)
+    end
+
+    def self.get_areas_total_usadas
+        sql = "
+        select count(s.total) as total
+        from(
+            select distinct a.id as total
+            from areas a
+            inner join plantios p on ( a.id = p.areas_id )
+            where p.areas_id is not null
+        ) s"
+  
+        sql = ActiveRecord::Base.connection.select_all(sql)
+    end
+
+    def self.get_areas_total_disponiveis
+        sql = "
+        select count(a.id) as total
+            from areas a
+            left join plantios p on ( a.id = p.areas_id )
+            where p.areas_id is null"
+  
+        sql = ActiveRecord::Base.connection.select_all(sql)
+    end
+
+    def self.get_areas_total
+        sql = "
+        select count(a.id) as total
+            from areas a"
+  
+        sql = ActiveRecord::Base.connection.select_all(sql)
+    end
+
   end

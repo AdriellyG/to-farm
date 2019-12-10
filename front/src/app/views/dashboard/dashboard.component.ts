@@ -3,15 +3,16 @@ import { getStyle, hexToRgba } from '@coreui/coreui/dist/js/coreui-utilities';
 import { CustomTooltips } from '@coreui/coreui-plugin-chartjs-custom-tooltips';
 import { AuthService } from '../../auth.service';
 import { Router } from '@angular/router';
+import { ApiServiceService } from '../../api-service.service';
 
 @Component({
   templateUrl: 'dashboard.component.html'
 })
 export class DashboardComponent implements OnInit {
-
   radioModel: string = 'Month';
   constructor( private auth: AuthService,
-               private router: Router ){
+               private router: Router,
+               private api: ApiServiceService ){
 
   }
 
@@ -378,6 +379,9 @@ export class DashboardComponent implements OnInit {
   ];
   public brandBoxChartLegend = false;
   public brandBoxChartType = 'line';
+  private area_ocupada: any;
+  private area_disponivel: any;
+  private area_total: any;
 
   public random(min: number, max: number) {
     return Math.floor(Math.random() * (max - min + 1) + min);
@@ -394,5 +398,29 @@ export class DashboardComponent implements OnInit {
     if ( !this.auth.isLoggedIn() ) {
       this.router.navigate(['/login']);
     }
+    this.getAreaOcupada();
+    this.getAreaDisponivel();
+    this.getAreaTotal();
+  }
+
+  getAreaOcupada(){
+    this.api.get('area_ocupada')
+      .subscribe(
+        res => this.area_ocupada = res
+      );
+  }
+
+  getAreaDisponivel(){
+    this.api.get('area_disponivel')
+      .subscribe(
+        res => this.area_disponivel = res
+      );
+  }
+
+  getAreaTotal(){
+    this.api.get('area_total')
+      .subscribe(
+        res => this.area_total = res
+      );
   }
 }

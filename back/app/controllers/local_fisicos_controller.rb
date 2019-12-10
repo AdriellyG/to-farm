@@ -8,6 +8,12 @@ class LocalFisicosController < ApplicationController
     render json: @local_fisicos
   end
 
+  def local_is_used()
+    @existe = LocalFisico.local_is_used(params[:id])
+    
+    render json: @existe
+  end
+
   # GET /local_fisicos/1
   def show
     render json: @local_fisico

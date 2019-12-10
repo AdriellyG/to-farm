@@ -130,5 +130,4 @@ export class TipoCultivoComponent implements OnInit {
       
       );
   }
-
 }

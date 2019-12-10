@@ -15,6 +15,7 @@ export class PlantioComponent implements OnInit {
                private auth: AuthService ) { }
   
   private apiUrl: string = 'plantios';
+  private message: string;
   private item_id: number;
   private data: any;
   private areas: any;
@@ -91,6 +92,8 @@ export class PlantioComponent implements OnInit {
   }
 
   newPlantio(e){
+    this.message = "";
+
     this.newForm = !this.newForm;
 
     if ( this.newForm ) {
@@ -101,26 +104,36 @@ export class PlantioComponent implements OnInit {
 
 
     if (!this.newForm ) {
-      this.api.post(this.apiUrl, {
-        dt_inicial:         this.newPlantioForm.value.dt_inicial,
-        dt_final:           this.newPlantioForm.value.dt_final,
-        areas_id:           this.newPlantioForm.value.area_id,
-        cultivos_id:        this.newPlantioForm.value.cultivo_id,
-        status_plantios_id: this.newPlantioForm.value.status_plantio_id
-      })
+      try {
+        this.api.post(this.apiUrl, {
+          dt_inicial:         this.newPlantioForm.value.dt_inicial,
+          dt_final:           this.newPlantioForm.value.dt_final,
+          areas_id:           this.newPlantioForm.value.area_id,
+          cultivos_id:        this.newPlantioForm.value.cultivo_id,
+          status_plantios_id: this.newPlantioForm.value.status_plantio_id
+        })
         .subscribe(
           data => {
             console.log("Post request is sucessful", data);
+            this.message = "Registro criado com sucesso!";
             this.getPlantio();
           },
           error => {
             console.log("Error", error);
+            this.message = "Não foi possível criar um novo registro.";
           }
         );
+      } catch (error) {
+        this.message = "Ocorreu um erro ao tentar criar um novo registro.";
+      }
     }
+
+    this.newPlantioForm.reset();
   }
 
   setId(id){
+    this.message = "";
+
     this.editForm = !this.editForm;
 
     if ( this.editForm ) {
@@ -131,40 +144,67 @@ export class PlantioComponent implements OnInit {
   }
 
   editPlantio(id){
+    this.message = "";
+
     if ( this.editForm ) {
-      this.api.patch(this.apiUrl + "/" + id, {
-        dt_inicial:         this.editPlantioForm.value.dt_inicial,
-        dt_final:           this.editPlantioForm.value.dt_final,
-        areas_id:           this.editPlantioForm.value.area_id,
-        cultivos_id:        this.editPlantioForm.value.cultivo_id,
-        status_plantios_id: this.editPlantioForm.value.status_plantio_id
-        })
-        .subscribe(
-          data => {
-            console.log("Patch request is sucessful", data);
-            this.getPlantio();
-          },
-          error => {
-            console.log("Error", error);
-          }
-        );
+      try {
+        this.api.patch(this.apiUrl + "/" + id, {
+          dt_inicial:         this.editPlantioForm.value.dt_inicial,
+          dt_final:           this.editPlantioForm.value.dt_final,
+          areas_id:           this.editPlantioForm.value.area_id,
+          cultivos_id:        this.editPlantioForm.value.cultivo_id,
+          status_plantios_id: this.editPlantioForm.value.status_plantio_id
+          })
+          .subscribe(
+            data => {
+              console.log("Patch request is sucessful", data);
+              this.message = "Registro editado com sucesso";
+              this.getPlantio();
+            },
+            error => {
+              console.log("Error", error);this.message = "";
+              this.message = "Não foi possível editar o registro";
+            }
+          );
+      } catch (error) {
+        this.message = "Ocorreu um erro ao tentar editar o registro.";
+      }
     }
 
+    this.editPlantioForm.reset();
     this.editForm = false;
     this.mainForm = true;
   }
 
   deletePlantio(id){
-    this.api.delete(this.apiUrl + "/" + id)
-        .subscribe(
-          data  => {
-          console.log("Delete request is successful ", data);
-          this.getPlantio();
-        },
-        error  => {
-          console.log("Error", error);
-        }
-      
-      );
+    this.message = "";
+
+    try {
+      this.api.delete(this.apiUrl + "/" + id)
+      .subscribe(
+        data  => {
+        console.log("Delete request is successful ", data);
+        this.message = "Registro deletado com sucesso";
+        this.getPlantio();
+      },
+      error  => {
+        console.log("Error", error);
+        this.message = "Não foi possível deletar o registro";
+      }
+
+    );
+    } catch (error) {
+      this.message = "Ocorreu um erro ao tentar deletar o registro.";
+    }
+  }
+
+  cancel(){
+    this.newForm = false;
+    this.editForm = false;
+    
+    this.mainForm = true;
+
+    this.newPlantioForm.reset();
+    this.editPlantioForm.reset();
   }
 }

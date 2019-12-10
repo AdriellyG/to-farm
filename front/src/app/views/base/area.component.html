@@ -29,6 +29,8 @@
                         </table>
                     </div>
 
+                    <p class="message">{{message}}</p>
+
                     <br />
 
                     <div *ngIf="newForm">
@@ -55,6 +57,8 @@
                         </form>
                     </div>
                     <button *ngIf="!editForm" type="submit" class="btn btn-success" (click)="newArea(this)">Novo</button>
+                    <button *ngIf="!editForm && !mainForm" class="btn btn-danger" (click)="cancel(this)">Cancelar</button>
+                    <br><br>
 
                     <div *ngIf="editForm">
                         <form class="heading-quartiary" [formGroup]="editAreaForm" (ngSubmit)="editArea(item_id)">
@@ -76,7 +80,9 @@
                                         {{solo.nome}}
                                     </option>
                                 </select>
+                                <br>
                                 <input type="submit" class="btn btn-success" value="Concluir" id="btnEdit">
+                                <button class="btn btn-danger" (click)="cancel(this)">Cancelar</button>
                             </div>
                         </form>
                     </div>

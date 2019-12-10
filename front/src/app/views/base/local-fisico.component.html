@@ -26,6 +26,7 @@
                             </tbody>
                         </table>
                     </div>
+                    <p class="message">{{message}}</p>
 
                     <br />
 
@@ -43,6 +44,8 @@
                         </form>
                     </div>
                     <button *ngIf="!editForm" type="submit" class="btn btn-success" (click)="newLocal(this)">Novo</button>
+                    <button *ngIf="!editForm && !mainForm" class="btn btn-danger" (click)="cancel(this)">Cancelar</button>
+                    <br><br>
 
                     <div *ngIf="editForm">
                         <form class="heading-quartiary" [formGroup]="editLocalForm" (ngSubmit)="editLocal(item_id)">
@@ -58,6 +61,7 @@
 
                                 <br>
                                 <input type="submit" class="btn btn-success" value="Concluir" id="btnEdit">
+                                <button class="btn btn-danger" (click)="cancel(this)">Cancelar</button>
                             </div>
                         </form>
                     </div>

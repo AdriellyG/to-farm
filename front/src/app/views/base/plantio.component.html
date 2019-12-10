@@ -32,6 +32,7 @@
                             </tbody>
                         </table>
                     </div>
+                    <p class="message">{{message}}</p>
 
                     <br />
 
@@ -68,7 +69,10 @@
                             </div>
                         </form>
                     </div>
+                    <br>
                     <button *ngIf="!editForm" type="submit" class="btn btn-success" (click)="newPlantio(this)">Novo</button>
+                    <button *ngIf="!editForm && !mainForm" class="btn btn-danger" (click)="cancel(this)">Cancelar</button>
+                    <br><br>
 
                     <div *ngIf="editForm">
                         <form class="heading-quartiary" [formGroup]="editPlantioForm" (ngSubmit)="editPlantio(item_id)">
@@ -80,8 +84,10 @@
                                 <br>
                                 <label for="acidez"><h4>Acidez:</h4></label>
                                 <input type="text" class="form-control col-md-4" placeholder="Acidez" formControlName="acidez" id="acidez" aria-describedby="acidezHelp">
-
+                                
+                                <br>
                                 <input type="submit" class="btn btn-success" value="Concluir" id="btnEdit">
+                                <button class="btn btn-danger" (click)="cancel(this)">Cancelar</button>
                                 
                             </div>
                         </form>

@@ -24,6 +24,30 @@ plantio = [
         fazendas_id: 3,
         cultivos_id: 3,
         status_plantio_id: 2
+    },
+    {
+        dt_inicial: "2019-12-09",
+        dt_final: "2020-01-03",
+        areas_id: 3,
+        fazendas_id: 3,
+        cultivos_id: 3,
+        status_plantio_id: 2
+    },
+    {
+        dt_inicial: "2019-12-10",
+        dt_final: "2020-01-03",
+        areas_id: 3,
+        fazendas_id: 3,
+        cultivos_id: 3,
+        status_plantio_id: 2
+    },
+    {
+        dt_inicial: "2019-12-01",
+        dt_final: "2020-01-03",
+        areas_id: 3,
+        fazendas_id: 3,
+        cultivos_id: 3,
+        status_plantio_id: 2
     }
 ]
 

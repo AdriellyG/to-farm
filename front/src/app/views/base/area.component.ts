@@ -22,6 +22,7 @@ export class AreaComponent implements OnInit {
   private solos: any;
   private local_id: any;
   private solo_id: any;
+  private message: string;
   private newForm: Boolean = false;
   private editForm: Boolean = false;
   private mainForm: Boolean = true;
@@ -51,11 +52,6 @@ export class AreaComponent implements OnInit {
     this.getArea();
     this.getTipoSolo();
     this.getLocal();
-
-    //this.getTipoSoloId(1);
-    //this.getLocalId(1);
-    //console.log("tipo_solo_id: ", this.solo_id);
-    //console.log("local_id: ", this.local_id);
 
     this.newForm = false;
   }
@@ -103,7 +99,18 @@ export class AreaComponent implements OnInit {
       );
   }
 
+  cancel(){
+    this.newForm = false;
+    this.editForm = false;
+    
+    this.mainForm = true;
+
+    this.newAreaForm.reset();
+    this.editAreaForm.reset();
+  }
+
   newArea(e){
+    this.message = "";
     this.newForm = !this.newForm;
     
     if ( this.newForm ) {
@@ -112,31 +119,38 @@ export class AreaComponent implements OnInit {
       this.mainForm = true;
     }
 
-    console.log("local_fisico: ", this.newAreaForm.value.localFisico);
-    console.log("tipo_solo: ", this.newAreaForm.value.tipoSolo);
-
-    if (!this.newForm ) {
-      this.api.post(this.apiUrl, {
-          area: {
-            nome:             this.newAreaForm.value.nome,
-            fazenda_id:      1,
-            tipo_solo_id:    this.newAreaForm.value.tipoSolo,
-            local_fisico_id: this.newAreaForm.value.localFisico
-          }
-        })
-        .subscribe(
-          data => {
-            console.log("Post request is sucessful", data);
-            this.getArea();
-          },
-          error => {
-            console.log("Error", error);
-          }
-        );
+    try{
+      if (!this.newForm ) {
+        this.api.post(this.apiUrl, {
+            area: {
+              nome:             this.newAreaForm.value.nome,
+              fazenda_id:      1,
+              tipo_solo_id:    this.newAreaForm.value.tipoSolo,
+              local_fisico_id: this.newAreaForm.value.localFisico
+            }
+          })
+          .subscribe(
+            data => {
+              console.log("Post request is sucessful", data);
+              this.message = "Área cadastrada com sucesso!";
+              this.getArea();
+            },
+            error => {
+              console.log("Error", error);
+              this.message = "Não foi possível cadastrar a nova área";
+            }
+          );
+      }
+    } catch(e){
+      this.message = "Erro ao tentar cadastrar área.";
     }
+
+    this.newAreaForm.reset();
   }
 
   setId(id){
+    this.message = "";
+
     this.editForm = !this.editForm;
 
     if ( this.editForm ) {
@@ -147,39 +161,56 @@ export class AreaComponent implements OnInit {
   }
 
   editArea(id){
-    if ( this.editForm ) {
-      this.api.patch(this.apiUrl + "/" + id, {
-          nome: this.newAreaForm.value.nome,
-          fazenda_id: 1,
-          tipo_solo_id: this.newAreaForm.value.tipoSolo,
-          local_fisico_id: this.newAreaForm.value.localFisico
-        })
-        .subscribe(
-          data => {
-            console.log("Patch request is sucessful", data);
-            this.getArea();
-          },
-          error => {
-            console.log("Error", error);
+    this.message = "";
+
+    try {
+      if ( this.editForm ) {
+        this.api.patch(this.apiUrl + "/" + id, {
+          area: {
+            nome:            this.editAreaForm.value.nome,
+            fazenda_id:      1,
+            tipo_solo_id:    this.editAreaForm.value.tipoSolo,
+            local_fisico_id: this.editAreaForm.value.localFisico
           }
-        );
+          })
+          .subscribe(
+            data => {
+              console.log("Patch request is sucessful", data);
+              this.message = "Área editada com sucesso!";
+              this.getArea();
+            },
+            error => {
+              console.log("Error", error);
+              this.message = "Não foi possível editar o registro.";
+            }
+          );
+      }
+    } catch (error) {
+      this.message = "Erro ao tentar editar o registro.";
     }
 
+    this.editAreaForm.reset();
     this.editForm = false;
     this.mainForm = true;
   }
 
   deleteArea(id){
-    this.api.delete(this.apiUrl + "/" + id)
-        .subscribe(
-          data  => {
-          console.log("Delete request is successful ", data);
-          this.getArea();
-        },
-        error  => {
-          console.log("Error", error);
-        }
-      
-      );
+    try {
+      this.api.delete(this.apiUrl + "/" + id)
+      .subscribe(
+        data  => {
+        console.log("Delete request is successful ", data);
+        this.message = "Registro deletado com sucesso!";
+        this.getArea();
+      },
+      error  => {
+        console.log("Error", error);
+        this.message = "Não foi possível deletar o registro.";
+      }
+    
+    );
+    } catch (error) {
+      this.message = "Erro ao tentar deletar registro";
+    }
   }
 }
